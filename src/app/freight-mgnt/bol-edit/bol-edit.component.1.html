@@ -1,0 +1,178 @@
+<div class="row">
+  <div class="col-md-9">
+    <!-- <form [formGroup]="bolForm" (ngSubmit)="onSubmit()"> -->
+    <form [formGroup]="bolForm" (ngSubmit)="onSubmit()">  
+
+      <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-3">
+          <div class="form-group">              
+            <label for="bol">BOL Nbr</label>
+            <input 
+              type="text"
+              id="bol"
+              formControlName="bolNbr"
+              class="form-control">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-3">
+          <div class="form-group">
+              
+            <label for="inv">Invoice Nbr</label>
+            <input 
+              type="text"
+              id="inv"
+              formControlName="inv"
+              class="form-control">
+          </div>
+        </div>
+
+        <div class="col-sm-3">
+          <div class="form-group">
+            <label for="qty">Invoiced Qty</label>  
+            <input 
+              type="number"
+              id="qty"
+              formControlName="invQty"
+              class="form-control">
+          </div>
+        </div>
+
+        <!-- <div class="col-sm-2">
+          <div class="form-group">
+            <label for="date">Invoiced Date</label>  
+            <div class='input-group date' data-provide="datepicker">
+                <input 
+                  type="date"
+                  id="date"
+                  formControlName="date"
+                  class="form-control">
+
+                  <span class="input-group-addon">
+                      <span class="glyphicon glyphicon-calendar"></span>
+                  </span>                  
+            </div>
+
+          </div>
+        </div>         -->
+      </div>
+<!-- 
+      <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-2">
+          <div class="form-group">              
+            <label for="corier">Corier Nbr</label>
+            <input 
+              type="text"
+              id="corier"
+              formControlName="corier"
+              class="form-control">
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-2">
+          <div class="form-group">              
+            <label for="doc">Document Nbr</label>
+            <input 
+              type="text"
+              id="doc"
+              formControlName="doc"
+              class="form-control">
+          </div>
+        </div>
+      </div> -->
+
+      <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-3">
+          <div class="form-group">              
+            <label for="container">Container Nbr</label>
+            <input 
+              type="text"
+              id="container"
+              formControlName="container"
+              class="form-control">
+          </div>
+        </div>
+      </div>
+
+
+      <hr>
+      
+      <div class="row">        
+        <div class="col-xs-12" formArrayName="po">
+          <div class="row"
+            *ngFor="let bolFormCtrl of bolForm.get('po').controls; let i = index"
+            [formGroupName]="i"
+            style="margin-top: 10px;"> 
+            <div class="col-sm-1"></div>
+            <div class="col-xs-3">
+              <label for="ponbr">PO Nbr</label>              
+              <input 
+                type="text"
+                class="form-control"
+                placeholder="PO Nbr"
+                id="ponbr"
+                formControlName="poNbr">
+            </div>
+
+            <div class="col-xs-3">
+              <label for="skunbr">SKU Nbr</label>              
+              <input 
+                type="text"
+                class="form-control"
+                placeholder="SKU Nbr"
+                formControlName="skuNbr">
+            </div>
+            
+            <div class="col-xs-2">
+              <label for="qty">QTY</label>              
+              <input
+                type="number"
+                class="form-control"
+                placeholder="Qty"
+                formControlName="qty">
+            </div>            
+           
+            <div class="col-xs-2">   
+              <h3></h3>                                          
+              <button                
+                type="button"                
+                class="btn btn-danger"
+                (click)="onDeletePO(i)">X</button>  
+            </div>
+
+          </div>
+
+          <hr>
+            <div class="row">
+              <div class="col-sm-1"></div>
+              <div class="col-sm-1">
+                <button
+                  type="button" 
+                  class="btn btn-success" 
+                  (click)="onAddPO()">Add PO</button>                  
+
+                  <p></p>
+                  <button
+                  type="submit" 
+                  class="btn btn-success" 
+                  >Save BOL</button>
+
+              </div>
+            </div>
+
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div> 

@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="col-xs-12">
+    <form [formGroup]="frtForm">
+      
+    <!-- <div class="col-sm-1"></div> -->
+    <div class="col-xs-2">
+      
+        <label for="bol">Enter BOL Nbr</label>
+        <input 
+          type="text"
+          id="bol"
+          formControlName="bol"
+          class="form-control" [(ngModel)]="bolValue">
+
+          <p></p>
+        <button
+          type="button" 
+          class="btn btn-success" 
+          (click)="onEditBol()"
+          >Retrieve BOL</button>
+      
+    </div>
+
+    <div class="col-sm-1"></div>
+    
+    <div class="col-xs-10">
+      <app-bol-edit></app-bol-edit>
+    </div>
+
+  </form>
+
+
+  </div>
+  
+  
+</div>
+
+
+
